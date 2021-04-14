@@ -34,7 +34,7 @@ const StyledTextArea = styled.textarea`
   background-color: hsla(0, 0%, 100%, 0.2);
 `;
 
-function App() {
+const StickyNotes = () => {
   const [notes, setNotes] = useState([]);
 
   // listen for shift + click to add note
@@ -51,15 +51,17 @@ function App() {
   return (
     <div>
       {notes.map(note => {
-        <Container x={note.x} y={note.y} className='react-sticky-note'>
-          <Header>
-            <StyledButton>X</StyledButton>
-          </Header>
-          <StyledTextArea />
-        </Container>;
+        return (
+          <Container x={note.x} y={note.y} className='react-sticky-note'>
+            <Header>
+              <StyledButton>X</StyledButton>
+            </Header>
+            <StyledTextArea value={note.note ? note.note : ''} />
+          </Container>
+        );
       })}
     </div>
   );
-}
+};
 
-export default App;
+export default StickyNotes;
