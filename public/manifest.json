@@ -1,16 +1,19 @@
 {
   "name": "Chrome Extension Boilerplate",
   "version": "1.0.0",
-  "manifest_version": 2,
+  "manifest_version": 3,
   "description": "Chrome Boilerplate with CRA.",
+  "background": {
+    "service_worker": "background.js"
+  },
   "content_scripts": [
     {
-      "matches": ["<all_urls>"],
+      "matches": ["http://*/*", "https://*/*"],
       "js": ["./main.js"],
       "css": ["/main.css"]
     }
   ],
-  "browser_action": {
+  "action": {
     "default_popup": "./popup.html"
   },
   "permissions": ["storage"]
