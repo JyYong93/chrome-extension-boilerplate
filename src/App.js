@@ -9,14 +9,14 @@ const InjectedHeader = styled.h1`
   text-align: center;
 `;
 
-// Source: https://www.youtube.com/watch?v=mveFTfzJ_io
+// Adapted from: https://www.youtube.com/watch?v=mveFTfzJ_io
 
-function App() {
+const App = () => {
   return (
     <ShadowRoot>
       <InjectedHeader>Injected code</InjectedHeader>
     </ShadowRoot>
   );
-}
+};
 
 export default App;
